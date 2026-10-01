@@ -1,0 +1,915 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #f7f9fc;
+    color: #182230;
+
+    line-height: 1.5;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+
+button,
+a {
+    font: inherit;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.container {
+    width: min(
+        1180px,
+        calc(100% - 48px)
+    );
+
+    margin-inline: auto;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border-bottom: 1px solid #e4e9f0;
+
+    backdrop-filter: blur(12px);
+}
+
+
+.header-inner {
+    width: min(
+        1180px,
+        calc(100% - 48px)
+    );
+
+    min-height: 76px;
+
+    margin-inline: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 32px;
+}
+
+
+.logo {
+    color: #172033;
+
+    font-size: 1.15rem;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.nav-link {
+    border: 0;
+
+    background: transparent;
+
+    color: #657083;
+
+    padding: 10px 14px;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.nav-link:hover,
+.nav-link:focus-visible,
+.nav-link.active {
+    background: #edf4ff;
+    color: #2864d7;
+}
+
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    border: 1px solid #dce3ec;
+
+    background: #ffffff;
+
+    color: #283548;
+
+    padding: 9px 14px;
+
+    border-radius: 8px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    background: #f2f6fb;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero-section {
+    padding: 90px 0 70px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #f4f8ff 100%
+        );
+}
+
+
+.hero-content {
+    max-width: 720px;
+}
+
+
+.eyebrow {
+    margin-bottom: 10px;
+
+    color: #2864d7;
+
+    font-size: 0.76rem;
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+.hero-section h1 {
+    font-size: clamp(
+        2.7rem,
+        7vw,
+        5.5rem
+    );
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+
+    margin-bottom: 28px;
+}
+
+
+.hero-section h1 span {
+    color: #2864d7;
+}
+
+
+.hero-description {
+    max-width: 600px;
+
+    color: #647083;
+
+    font-size: 1.08rem;
+}
+
+
+/* =========================================
+   PLANET SECTION
+========================================= */
+
+.planet-section {
+    padding: 80px 0 110px;
+}
+
+
+.section-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    margin-bottom: 28px;
+}
+
+
+.section-heading h2 {
+    font-size: clamp(
+        2rem,
+        4vw,
+        3.2rem
+    );
+
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+
+.planet-status {
+    color: #7a8493;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   PLANET TABS
+========================================= */
+
+.planet-tabs {
+    display: flex;
+
+    gap: 8px;
+
+    overflow-x: auto;
+
+    padding-bottom: 12px;
+
+    margin-bottom: 28px;
+
+    scrollbar-width: thin;
+}
+
+
+.planet-tab {
+    flex: 0 0 auto;
+
+    border: 1px solid #dfe5ed;
+
+    background: #ffffff;
+
+    color: #566174;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.planet-tab:hover {
+    border-color: #aac5f7;
+
+    color: #2864d7;
+
+    transform: translateY(-1px);
+}
+
+
+.planet-tab:focus-visible {
+    outline: 3px solid rgba(40, 100, 215, 0.25);
+
+    outline-offset: 2px;
+}
+
+
+.planet-tab.active {
+    background: #2864d7;
+
+    border-color: #2864d7;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   PLANET CARD
+========================================= */
+
+.planet-card {
+    display: grid;
+
+    grid-template-columns:
+        minmax(280px, 0.85fr)
+        minmax(0, 1.15fr);
+
+    gap: 60px;
+
+    padding: 52px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9f0;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 20px 50px rgba(27, 50, 83, 0.07);
+}
+
+
+.planet-visual {
+    min-height: 440px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #edf5ff 0%,
+            #f8fbff 55%,
+            #ffffff 100%
+        );
+
+    overflow: hidden;
+}
+
+
+.planet-image-wrapper {
+    width: min(
+        78%,
+        360px
+    );
+
+    aspect-ratio: 1;
+
+    display: grid;
+    place-items: center;
+}
+
+
+.planet-image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.35s ease;
+}
+
+
+.planet-card:hover
+.planet-image-wrapper img {
+    transform: scale(1.03);
+}
+
+
+.planet-information {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.planet-type {
+    margin-bottom: 5px;
+
+    color: #2864d7;
+
+    font-size: 0.78rem;
+    font-weight: 800;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+
+.planet-information h2 {
+    margin-bottom: 22px;
+
+    font-size: clamp(
+        2.4rem,
+        5vw,
+        4.5rem
+    );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.05em;
+}
+
+
+.planet-description {
+    max-width: 650px;
+
+    margin-bottom: 36px;
+
+    color: #687386;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   PLANET DATA
+========================================= */
+
+.planet-data {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    border-top: 1px solid #e5e9ef;
+}
+
+
+.data-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding: 18px 16px;
+
+    border-bottom: 1px solid #e5e9ef;
+}
+
+
+.data-item:nth-child(odd) {
+    border-right: 1px solid #e5e9ef;
+}
+
+
+.data-label {
+    color: #7b8492;
+
+    font-size: 0.76rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.07em;
+}
+
+
+.data-value {
+    color: #1d2838;
+
+    font-size: 1rem;
+}
+
+
+/* =========================================
+   ERROR STATE
+========================================= */
+
+.error-state {
+    padding: 80px 30px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9f0;
+
+    border-radius: 20px;
+}
+
+
+.error-icon {
+    width: 50px;
+    height: 50px;
+
+    margin: 0 auto 20px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: #fff0f0;
+
+    color: #c23b3b;
+
+    font-weight: 800;
+}
+
+
+.error-state h2 {
+    margin-bottom: 10px;
+}
+
+
+.error-state p {
+    margin-bottom: 25px;
+
+    color: #737d8d;
+}
+
+
+.primary-button {
+    border: 0;
+
+    background: #2864d7;
+
+    color: #ffffff;
+
+    padding: 12px 22px;
+
+    border-radius: 8px;
+
+    font-weight: 700;
+}
+
+
+.primary-button:hover,
+.primary-button:focus-visible {
+    background: #1d54bb;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    background: #101722;
+
+    color: #ffffff;
+
+    padding-top: 60px;
+}
+
+
+.footer-inner {
+    display: grid;
+
+    grid-template-columns:
+        2fr 1fr;
+
+    gap: 60px;
+
+    padding-bottom: 50px;
+}
+
+
+.footer-about {
+    max-width: 550px;
+}
+
+
+.footer-about h2 {
+    margin-bottom: 14px;
+}
+
+
+.footer-about p {
+    color: #aab3c1;
+}
+
+
+.footer-links h3 {
+    margin-bottom: 14px;
+
+    font-size: 0.9rem;
+}
+
+
+.footer-links ul {
+    list-style: none;
+}
+
+
+.footer-links li + li {
+    margin-top: 10px;
+}
+
+
+.footer-links a {
+    color: #bfc7d3;
+
+    text-decoration: none;
+}
+
+
+.footer-links a:hover,
+.footer-links a:focus-visible {
+    color: #ffffff;
+
+    text-decoration: underline;
+}
+
+
+.footer-bottom {
+    border-top: 1px solid #26303e;
+
+    padding: 22px 24px;
+
+    text-align: center;
+
+    color: #8994a4;
+
+    font-size: 0.85rem;
+}
+
+
+/* =========================================
+   DARK THEME
+========================================= */
+
+body.dark-theme {
+    background: #0c1119;
+
+    color: #edf2f8;
+}
+
+
+body.dark-theme .site-header {
+    background: rgba(12, 17, 25, 0.94);
+
+    border-color: #202a37;
+}
+
+
+body.dark-theme .logo {
+    color: #ffffff;
+}
+
+
+body.dark-theme .nav-link {
+    color: #9ca8b8;
+}
+
+
+body.dark-theme .nav-link:hover,
+body.dark-theme .nav-link:focus-visible,
+body.dark-theme .nav-link.active {
+    background: #17263d;
+
+    color: #79a8ff;
+}
+
+
+body.dark-theme .theme-toggle {
+    background: #131b26;
+
+    border-color: #2b3747;
+
+    color: #e5ebf3;
+}
+
+
+body.dark-theme .hero-section {
+    background:
+        linear-gradient(
+            180deg,
+            #101722 0%,
+            #0c1119 100%
+        );
+}
+
+
+body.dark-theme .hero-description,
+body.dark-theme .planet-description {
+    color: #a6b0bf;
+}
+
+
+body.dark-theme .planet-tab {
+    background: #121a25;
+
+    border-color: #2a3544;
+
+    color: #a8b3c2;
+}
+
+
+body.dark-theme .planet-tab:hover {
+    border-color: #4f79b9;
+
+    color: #8db5ff;
+}
+
+
+body.dark-theme .planet-tab.active {
+    background: #2864d7;
+
+    border-color: #2864d7;
+
+    color: #ffffff;
+}
+
+
+body.dark-theme .planet-card,
+body.dark-theme .error-state {
+    background: #121a25;
+
+    border-color: #273342;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+body.dark-theme .planet-visual {
+    background:
+        radial-gradient(
+            circle at center,
+            #182a43 0%,
+            #111b28 55%,
+            #0f1722 100%
+        );
+}
+
+
+body.dark-theme .planet-data {
+    border-color: #293544;
+}
+
+
+body.dark-theme .data-item {
+    border-color: #293544;
+}
+
+
+body.dark-theme .data-value {
+    color: #edf2f8;
+}
+
+
+body.dark-theme .data-label {
+    color: #8793a3;
+}
+
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .header-inner {
+        gap: 15px;
+    }
+
+
+    .planet-card {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        padding: 30px;
+    }
+
+
+    .planet-visual {
+        min-height: 350px;
+    }
+
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+    .container,
+    .header-inner {
+        width: min(
+            100% - 30px,
+            1180px
+        );
+    }
+
+
+    .site-header {
+        position: relative;
+    }
+
+
+    .header-inner {
+        min-height: auto;
+
+        padding: 16px 0;
+
+        flex-wrap: wrap;
+    }
+
+
+    .main-nav {
+        order: 3;
+
+        width: 100%;
+    }
+
+
+    .nav-link {
+        flex: 1;
+    }
+
+
+    .hero-section {
+        padding: 65px 0 50px;
+    }
+
+
+    .planet-section {
+        padding: 60px 0 80px;
+    }
+
+
+    .section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .planet-card {
+        padding: 18px;
+
+        border-radius: 14px;
+    }
+
+
+    .planet-visual {
+        min-height: 280px;
+    }
+
+
+    .planet-information h2 {
+        font-size: 3rem;
+    }
+
+
+    .planet-data {
+        grid-template-columns: 1fr;
+    }
+
+
+    .data-item:nth-child(odd) {
+        border-right: 0;
+    }
+
+
+    .footer-inner {
+        gap: 40px;
+
+        padding-bottom: 40px;
+    }
+}
